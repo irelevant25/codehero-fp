@@ -240,7 +240,6 @@
                 <p class="lead"><?= t('avail_lead') ?></p>
 
                 <div class="availability-box">
-                    <div class="avail-icon">⚡</div>
                     <div class="avail-content">
                         <h3><?= t('avail_box_title') ?></h3>
                         <p><?= t('avail_box_desc') ?></p>

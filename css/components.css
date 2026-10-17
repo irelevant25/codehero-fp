@@ -288,19 +288,6 @@
   flex-wrap: wrap;
 }
 
-.avail-icon {
-  width: 52px;
-  height: 52px;
-  flex-shrink: 0;
-  background: var(--primary-subtle);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  font-size: 1.5rem;
-}
-
 .avail-content h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.15rem;
