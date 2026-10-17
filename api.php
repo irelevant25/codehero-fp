@@ -58,7 +58,7 @@ if (!empty($_POST['website'])) {
     exit;
 }
 
-$host_email    = 'support@codehero.sk';
+$host_email    = 'business@codehero.sk';
 $email_subject = 'Kontaktny formular od: ' . $email;
 
 $email_body  = "Nova sprava z kontaktneho formulara\n\n";
