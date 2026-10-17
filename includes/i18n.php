@@ -56,11 +56,13 @@ const T = [
         'svc4_desc'      => 'Aktualizácie, opravy chýb, optimalizácia výkonu a konzultácie k existujúcim projektom.',
 
         // References
-        'refs_label'   => 'Portfólio',
-        'refs_h2'      => 'Referencie',
-        'refs_lead'    => 'Výber projektov, na ktorých som pracoval — vlastné projekty aj práca pre klientov.',
-        'tab_personal' => 'Vlastné projekty',
-        'tab_client'   => 'Klientske projekty',
+        'refs_label'     => 'Portfólio',
+        'refs_h2'        => 'Referencie',
+        'refs_lead'      => 'Výber projektov, na ktorých som pracoval — vlastné projekty aj práca pre klientov.',
+        'tab_personal'   => 'Vlastné projekty',
+        'tab_client'     => 'Klientske projekty',
+        'thumb_alt'      => 'Ukážka',
+        'thumb_internal' => 'Interný systém',
 
         // Status labels
         'status_live'     => 'Živé',
@@ -167,11 +169,13 @@ const T = [
         'svc4_desc'      => 'Updates, bug fixes, performance optimization and consulting for existing projects.',
 
         // References
-        'refs_label'   => 'Portfolio',
-        'refs_h2'      => 'References',
-        'refs_lead'    => 'A selection of projects I\'ve worked on — personal projects and client work.',
-        'tab_personal' => 'Personal projects',
-        'tab_client'   => 'Client projects',
+        'refs_label'     => 'Portfolio',
+        'refs_h2'        => 'References',
+        'refs_lead'      => 'A selection of projects I\'ve worked on — personal projects and client work.',
+        'tab_personal'   => 'Personal projects',
+        'tab_client'     => 'Client projects',
+        'thumb_alt'      => 'Preview',
+        'thumb_internal' => 'Internal system',
 
         // Status labels
         'status_live'     => 'Live',

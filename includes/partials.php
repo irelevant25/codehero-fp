@@ -124,10 +124,43 @@ function github_icon(): string
     return '<svg class="gh-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>';
 }
 
+// Stroked icons of the card placeholders, in the style of the site's other icons
+function placeholder_icon(string $name): string
+{
+    $shapes = [
+        'lock'  => '<rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" />',
+        'globe' => '<circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />',
+    ];
+    return '<svg viewBox="0 0 24 24">' . $shapes[$name] . '</svg>';
+}
+
+// Screenshot at the top of a card, or an icon when there is none (a lock for internal systems).
+// It links where the card's first link goes: a bigger target for the mouse, skipped by keyboards
+// and screen readers, which have that link already.
+function ref_thumb(array $project): void
+{
+    $name = loc($project['name']);
+    $href = $project['url'] ?? (isset($project['repo']) ? GITHUB_URL . '/' . $project['repo'] : '');
+    $tag  = $href ? 'a' : 'div';
+    $link = $href ? ' href="' . e($href) . '" target="_blank" rel="noopener" tabindex="-1"' : '';
+
+    if (!empty($project['image'])): ?>
+                    <<?= $tag ?> class="ref-thumb"<?= $link ?> aria-hidden="true">
+                        <img src="/assets/refs/<?= e($project['image']) ?>" width="800" height="450"
+                            alt="<?= t('thumb_alt') ?>: <?= e($name) ?>" loading="lazy" decoding="async" />
+                    </<?= $tag ?>>
+<?php elseif (!empty($project['internal'])): ?>
+                    <<?= $tag ?> class="ref-thumb ph"<?= $link ?> aria-hidden="true"><?= placeholder_icon('lock') ?><span><?= t('thumb_internal') ?></span></<?= $tag ?>>
+<?php else: ?>
+                    <<?= $tag ?> class="ref-thumb ph"<?= $link ?> aria-hidden="true"><?= empty($project['url']) && !empty($project['repo']) ? github_icon() : placeholder_icon('globe') ?><span><?= e($name) ?></span></<?= $tag ?>>
+<?php endif;
+}
+
 // One reference card from PROJECTS (data.php)
 function ref_card(array $project): void
 { ?>
                 <div class="ref-card">
+<?php ref_thumb($project); ?>
                     <div class="ref-card-name"><?= e(loc($project['name'])) ?></div>
                     <p class="ref-card-desc"><?= e(loc($project['desc'])) ?></p>
                     <div class="ref-card-footer">

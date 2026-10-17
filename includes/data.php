@@ -32,8 +32,10 @@ const SKILLS = [
 ];
 
 // Reference cards, in the order they are shown.
-// status: live | wip | planned | archived
-// url  = the live site (optional), repo = repository under GITHUB_URL (optional)
+// status:   live | wip | planned | archived
+// url      = the live site (optional), repo = repository under GITHUB_URL (optional)
+// image    = screenshot in assets/refs/, 800×450 WebP (optional; without it the card shows an icon)
+// internal = true for a system with nothing public to show (lock icon instead of a screenshot)
 const PROJECTS = [
     'client' => [
         [
@@ -46,6 +48,7 @@ const PROJECTS = [
             'status' => 'wip',
             'url'    => 'https://divadielkogaleria.sk',
             'repo'   => 'divadielko-galeria-fp',
+            'image'  => 'divadielkogaleria.webp',
         ],
         [
             'name'   => 'audiolux.sk',
@@ -57,12 +60,13 @@ const PROJECTS = [
             'status' => 'live',
             'url'    => 'https://audiolux.sk',
             'repo'   => 'audiolux-fp',
+            'image'  => 'audiolux.webp',
         ],
         [
             'name'   => ['sk' => 'Trenčianske vodárne a kanalizácie', 'en' => 'Trenčín waterworks and sewerage'],
             'desc'   => [
-                'sk' => 'Vývoj interných aj externých systémov pre správu vodárenských procesov. Full-stack riešenie v ASP.NET a Blazor.',
-                'en' => 'Development of internal and external systems for water management processes. Full-stack solution in ASP.NET and Blazor.',
+                'sk' => 'Vývoj interných systémov pre vodárenské procesy aj verejného portálu spoločnosti. Full-stack riešenie v ASP.NET a Blazor.',
+                'en' => 'Development of internal systems for water management processes and of the company\'s public portal. Full-stack solution in ASP.NET and Blazor.',
             ],
             'tags'   => ['ASP.NET', 'Blazor', 'FE + BE'],
             'status' => 'live',
@@ -71,29 +75,33 @@ const PROJECTS = [
         [
             'name'   => ['sk' => 'Úrad verejného zdravotníctva SR', 'en' => 'Public Health Authority of the SR'],
             'desc'   => [
-                'sk' => 'Vývoj frontendu pre systémy verejného zdravotníctva v Angular.',
-                'en' => 'Frontend development for public health systems in Angular.',
+                'sk' => 'Vývoj frontendu interných systémov aj verejného portálu úradu v Angular.',
+                'en' => 'Frontend development of the authority\'s internal systems and public portal in Angular.',
             ],
             'tags'   => ['Private', 'Angular', 'FE'],
             'status' => 'live',
+            'url'    => 'https://www.uvzsr.sk/web/uvz',
         ],
         [
             'name'   => ['sk' => 'Centrálna Integračná Platforma', 'en' => 'Central Integration Platform'],
             'desc'   => [
-                'sk' => 'Rozširovanie funkcionality integračnej platformy v Talend prostredí.',
-                'en' => 'Extending functionality of the integration platform in Talend environment.',
+                'sk' => 'Rozširovanie integračnej platformy v Talend — transformácia dát medzi vládnym cloudom a ďalšími systémami, ktoré k nim majú prístup.',
+                'en' => 'Extending the integration platform in Talend — transforming data between the government cloud and other systems with access to it.',
             ],
-            'tags'   => ['Private', 'Talend', 'Integration'],
-            'status' => 'live',
+            'tags'     => ['Private', 'Talend', 'Integration'],
+            'status'   => 'live',
+            'internal' => true,
         ],
         [
             'name'   => ['sk' => 'Úrad pre reguláciu elekt. komunikácií', 'en' => 'Regulatory Authority for Electronic Comm.'],
             'desc'   => [
-                'sk' => 'Frontend Angular aplikácia pre regulačný úrad elektronických komunikácií a poštových služieb.',
-                'en' => 'Angular frontend application for the regulatory authority of electronic communications and postal services.',
+                'sk' => 'Frontend interných systémov aj verejného portálu úradu pre elektronické komunikácie a poštové služby v Angular.',
+                'en' => 'Angular frontend of the internal systems and the public portal of the regulatory authority for electronic communications and postal services.',
             ],
             'tags'   => ['Private', 'Angular', 'FE'],
             'status' => 'live',
+            'url'    => 'https://www.teleoff.gov.sk/',
+            'image'  => 'teleoff.webp',
         ],
         [
             'name'   => ['sk' => 'Monitorovací systém pre reguláciu', 'en' => 'Monitoring System for Regulation'],
@@ -101,8 +109,9 @@ const PROJECTS = [
                 'sk' => 'Frontend vývoj monitorovacieho systému pre reguláciu a štátny dohľad v Angular.',
                 'en' => 'Frontend development of a monitoring system for regulation and state supervision in Angular.',
             ],
-            'tags'   => ['Private', 'Angular', 'FE'],
-            'status' => 'live',
+            'tags'     => ['Private', 'Angular', 'FE'],
+            'status'   => 'live',
+            'internal' => true,
         ],
         [
             'name'   => ['sk' => 'Ústav súdneho inžinierstva v Žiline', 'en' => 'Institute of Forensic Engineering Žilina'],
@@ -110,8 +119,9 @@ const PROJECTS = [
                 'sk' => 'Frontend Angular aplikácia pre potreby Ústavu súdneho inžinierstva Žilinskej univerzity.',
                 'en' => 'Angular frontend application for the Institute of Forensic Engineering at the University of Žilina.',
             ],
-            'tags'   => ['Private', 'Angular', 'FE'],
-            'status' => 'live',
+            'tags'     => ['Private', 'Angular', 'FE'],
+            'status'   => 'live',
+            'internal' => true,
         ],
     ],
 
@@ -126,6 +136,7 @@ const PROJECTS = [
             'status' => 'wip',
             'url'    => 'https://anotoki.eu',
             'repo'   => 'anotoki',
+            'image'  => 'anotoki.webp',
         ],
         [
             'name'   => 'genshin.anotoki.eu',
@@ -137,6 +148,7 @@ const PROJECTS = [
             'status' => 'live',
             'url'    => 'https://genshin.anotoki.eu',
             'repo'   => 'anotoki-genshin-impact',
+            'image'  => 'genshin.webp',
         ],
         [
             'name'   => 'builder.anotoki.eu',
@@ -148,6 +160,7 @@ const PROJECTS = [
             'status' => 'wip',
             'url'    => 'https://builder.anotoki.eu',
             'repo'   => 'anotoki-build-analyzer',
+            'image'  => 'builder.webp',
         ],
         [
             'name'   => 'survey.anotoki.eu',
@@ -159,6 +172,19 @@ const PROJECTS = [
             'status' => 'live',
             'url'    => 'https://survey.anotoki.eu',
             'repo'   => 'anotoki-survey',
+            'image'  => 'survey.webp',
+        ],
+        [
+            'name'   => 'iam.anotoki.eu',
+            'desc'   => [
+                'sk' => 'Jeden účet pre všetky anotoki weby — vlastný OpenID Connect poskytovateľ: registrácia, prihlásenie heslom, kódom z e-mailu alebo cez Google, dvojfaktorové overenie a jednotné prihlásenie (SSO).',
+                'en' => 'One account for every anotoki site — a custom OpenID Connect provider: sign-up, sign-in with a password, an e-mailed code or Google, two-factor authentication and single sign-on.',
+            ],
+            'tags'   => ['PHP', 'Angular', 'PostgreSQL', 'OIDC'],
+            'status' => 'live',
+            'url'    => 'https://iam.anotoki.eu',
+            'repo'   => 'anotoki-iam',
+            'image'  => 'iam.webp',
         ],
         [
             'name'   => 'japanese.anotoki.eu',
@@ -170,6 +196,7 @@ const PROJECTS = [
             'status' => 'wip',
             'url'    => 'https://japanese.anotoki.eu',
             'repo'   => 'anotoki-japanese-academy',
+            'image'  => 'japanese.webp',
         ],
         [
             'name'   => 'starrail.anotoki.eu',
@@ -209,6 +236,7 @@ const PROJECTS = [
             'tags'   => ['Electron', 'JS', 'TamperMonkey'],
             'status' => 'live',
             'repo'   => 'yt-download-view-tracker',
+            'image'  => 'yt-tracker.webp',
         ],
         [
             'name'   => 'youtube archiver',
@@ -219,6 +247,7 @@ const PROJECTS = [
             'tags'   => ['PHP', 'Docker', 'yt-dlp'],
             'status' => 'live',
             'repo'   => 'yt-archiver',
+            'image'  => 'yt-archiver.webp',
         ],
         [
             'name'   => 'subdelay',
@@ -229,6 +258,7 @@ const PROJECTS = [
             'tags'   => ['Node.js', 'CLI'],
             'status' => 'live',
             'repo'   => 'subdelay',
+            'image'  => 'subdelay.webp',
         ],
         [
             'name'   => 'XRayAnalyzer',
