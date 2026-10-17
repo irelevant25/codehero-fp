@@ -216,6 +216,7 @@ const PROJECTS = [
             'tags'   => ['Node.js', 'ONVIF', 'SQLite', 'Docker'],
             'status' => 'live',
             'repo'   => 'CamNode',
+            'image'  => 'camnode.webp',
         ],
         [
             'name'   => 'Mixion',
@@ -226,6 +227,7 @@ const PROJECTS = [
             'tags'   => ['C#', '.NET 8', 'Angular', 'WASAPI'],
             'status' => 'live',
             'repo'   => 'Mixion',
+            'image'  => 'mixion.webp',
         ],
         [
             'name'   => 'youtube download/view tracker',
@@ -269,6 +271,7 @@ const PROJECTS = [
             'tags'   => ['C#', 'WPF', 'Python'],
             'status' => 'archived',
             'repo'   => 'XRayAnalyzer',
+            'image'  => 'xrayanalyzer.webp',
         ],
     ],
 ];
