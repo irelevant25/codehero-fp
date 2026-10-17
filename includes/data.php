@@ -97,13 +97,13 @@ const PROJECTS = [
         [
             'name'   => ['sk' => 'Úrad pre reguláciu elekt. komunikácií', 'en' => 'Regulatory Authority for Electronic Comm.'],
             'desc'   => [
-                'sk' => 'Frontend interných systémov aj verejného portálu úradu pre elektronické komunikácie a poštové služby v Angular.',
-                'en' => 'Angular frontend of the internal systems and the public portal of the regulatory authority for electronic communications and postal services.',
+                'sk' => 'Frontend interných systémov aj Portálu elektronických služieb úradu pre elektronické komunikácie a poštové služby v Angular.',
+                'en' => 'Angular frontend of the internal systems and the e-services portal of the regulatory authority for electronic communications and postal services.',
             ],
             'tags'   => ['Private', 'Angular', 'FE'],
             'status' => 'live',
-            'url'    => 'https://www.teleoff.gov.sk/',
-            'image'  => 'teleoff.webp',
+            'url'    => 'https://portal.teleoff.gov.sk/',
+            'image'  => 'teleoff-portal.webp',
         ],
         [
             'name'   => ['sk' => 'Monitorovací systém pre reguláciu', 'en' => 'Monitoring System for Regulation'],
