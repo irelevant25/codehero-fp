@@ -69,6 +69,7 @@ nav {
   transition: all var(--transition);
   font-size: 0.875rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .icon-btn:hover {

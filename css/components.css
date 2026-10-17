@@ -156,6 +156,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  margin-left: auto; /* stays on the right when the tags push it to a new line */
 }
 
 .ref-status::before {
@@ -191,6 +192,25 @@
 .ref-link:hover {
   color: var(--primary-hover);
   gap: 8px;
+}
+
+.ref-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+/* GitHub mark — a filled glyph, unlike the stroked icons */
+.gh-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.contact-icon .gh-icon {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* ── Availability box ── */

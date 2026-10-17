@@ -1,20 +1,21 @@
 /* ═══════════════════════════════════════════════════════════
    app — Initialisation + UI interactions
-   Depends on: i18n.js, theme.js  (loaded before this file)
+   Depends on: theme.js  (loaded before this file)
    ═══════════════════════════════════════════════════════════ */
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
 applyTheme(currentTheme);
-applyLang(currentLang);
 
 // ── Theme toggle ──────────────────────────────────────────────────────────────
 document.getElementById('themeBtn').addEventListener('click', () => {
   applyTheme(resolveTheme(currentTheme) === 'dark' ? 'light' : 'dark');
 });
 
-// ── Language toggle ───────────────────────────────────────────────────────────
-document.getElementById('langBtn').addEventListener('click', () => {
-  applyLang(currentLang === 'sk' ? 'en' : 'sk');
+// ── Language switch (a link to the other version: remember it, keep the section)
+document.getElementById('langBtn').addEventListener('click', (e) => {
+  const link = e.currentTarget;
+  try { localStorage.setItem('lang', link.dataset.lang); } catch (err) { }
+  link.href = link.getAttribute('href').split('#')[0] + location.hash;
 });
 
 // ── Mobile hamburger ──────────────────────────────────────────────────────────
@@ -61,7 +62,3 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 const aboutSection = document.getElementById('about');
 if (aboutSection) skillObserver.observe(aboutSection);
-
-// ── Current year
-const year = document.querySelector('.year');
-if (year) year.textContent = new Date().getFullYear();
