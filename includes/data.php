@@ -71,6 +71,7 @@ const PROJECTS = [
             'tags'   => ['ASP.NET', 'Blazor', 'FE + BE'],
             'status' => 'live',
             'url'    => 'https://tvkas.sk',
+            'image'  => 'tvk.webp',
         ],
         [
             'name'   => ['sk' => 'Úrad verejného zdravotníctva SR', 'en' => 'Public Health Authority of the SR'],
@@ -81,6 +82,7 @@ const PROJECTS = [
             'tags'   => ['Private', 'Angular', 'FE'],
             'status' => 'live',
             'url'    => 'https://www.uvzsr.sk/web/uvz',
+            'image'  => 'uvz.webp',
         ],
         [
             'name'   => ['sk' => 'Centrálna Integračná Platforma', 'en' => 'Central Integration Platform'],
